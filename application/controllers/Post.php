@@ -27,7 +27,12 @@ class Post extends CI_Controller
       $this->Post_model->add($title, $content);
       return;
     }
+    $datas=$this->Post_model->findAll();
+
     $this->load->view('Post_add', ['title' => $title, 'content' => $content]);
+
+    $this->load->view('Post_display', ['datas' => $datas]);
+
   }
 }
 

@@ -21,6 +21,10 @@ class Post_model extends CI_Model
     ];
     return $this->db->insert($this->table, $data);
   }
+
+  public function findAll(){
+    return $this->db->get($this->table)->result_object();
+  }
 }
 
 
